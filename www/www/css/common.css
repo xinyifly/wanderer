@@ -1,0 +1,78 @@
+.header > h2 {
+    color: #00F;
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+    padding: 5px 10px;
+}
+.header > span {
+    display: block;
+    float: left;
+    padding-top: 18px;
+}
+#headnav {
+    background-color: #1E90FF;
+}
+#main {
+    padding: 10px 5px;
+}
+#main p {
+    margin-bottom: 7px;
+}
+.mainpDate {
+    text-align: right;
+}
+
+/* comment.html */
+#commentPoster .wrapper {
+    border: 1px solid #3EB0FF;
+}
+#commentPoster input, #commentPoster textarea {
+    border: 0; padding: 0; margin: 0;
+    outline: none;
+    width: 100%;
+}
+.submitButton {
+    background-color: #3EB0FF;
+    color: white;
+    display: inline-block;
+    padding: 1px 2px;
+    text-decoration: none;
+}
+.submitButton:hover {
+    background-color: #1E90FF;
+}
+#commentLister {
+    margin-top: 30px;
+    margin-bottom: 42px;
+}
+#commentLister span {
+    font-weight: bold;
+}
+#commentLister a {
+    margin-right: 7px;
+    padding: 2px 7px;
+}
+
+/* module/headnav.html */
+.navlist {
+    float: left;
+    list-style-type: none;
+}
+.navlist > a {
+    background-color: #1E90FF;
+    color: white;
+    display: block;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.navlist > a:hover {
+    background-color: #3EB0FF;
+}
+
+
+.clear {
+    clear: both;
+    float: none;
+    height: 0px;
+}

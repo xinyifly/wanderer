@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width,user-scalable=no">
+    <title>Comment</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/loadXMLDoc.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h2>Comment</h2>
+        <span>armlfs</span>
+        <div class="clear"></div>
+    </div>
+    <div id="headnav">
+        <!-- module/headnav.html -->
+    </div>
+    <div id="main">
+        <div id="commentPoster">
+            Name:
+            <div class="wrapper"><input type="text" name="name"></div>
+            <br>
+            Comment:
+            <div class="wrapper">
+                <textarea id="text" name="value"></textarea>
+            </div>
+            <br>
+            <a class="submitButton" id="submitButton"
+               href="javascript:commentSubmit()">Submit</a>
+        </div>
+        <hr style="border-color:#1E90FF">
+        <div id="commentLister">
+            <!-- /upload/xml/comment.xml -->
+        </div>
+    </div>
+    <script>
+loadXMLDoc("/upload/xml/comment.xml", "comment_lister")
+    </script>
+</body>
+</html>

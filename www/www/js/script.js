@@ -14,11 +14,13 @@ function stateChange(xmlhttp, param) {
     case "comment_lister":
         commentListComment(xmlhttp, param);
         break;
-    case "commentSubmit":
+    case "comment_submit":
         loadXMLDoc("/upload/xml/comment.xml?rand=" 
                 + new Date().getTime(), 
                 "comment_lister");
         break;
+    case "blog_main":
+        blogListBlog
     }
 }
 
@@ -43,13 +45,16 @@ function commentSubmit() {
     var value = document.getElementsByName("value")[0].value;
     if (name != "" && value != "")
     {
-        loadXMLDoc("http://file.armlfs.org/services/comment.php", 
-                "commentSubmit", "name=" + name + "&value=" + value);
+        var xmlphp = "http://file.armlfs.org/services/xml.php";
+        var postParam = "url=/upload/xml/comment.xml" + "&op=add" 
+            + "&elems=comment_value_name" + "&value=" + value 
+            + "&name=" + name;
+        loadXMLDoc(xmlphp, "comment_submit", postParam);
     }
 }
 
 function commentListComment(xmlhttp, param) {
-    var pageLen = 10;
+    var pageLen = 20;
     param = param.split("&");
     var page = 1;
     if (param[1] != null)
@@ -72,11 +77,19 @@ function commentListComment(xmlhttp, param) {
     var pages = x.length/pageLen + (x.length%pageLen == 0 ? 0 : 1);
     for (var i = 1; i <= pages; i++)
     {
-        txt = txt + "<a href=\"javascript:loadXMLDoc" 
-            + "('/upload/xml/comment.xml', 'comment_lister&" 
+        if (i != page)
+        txt = txt + "<a href=\"javascript:loadXMLDoc(" 
+            + "'/upload/xml/comment.xml', 'comment_lister&" 
             + i + "')\" class=\"submitButton\">" + i + "</a>";
+        else
+            txt = txt + "<a href=\"javascript:void(0)\"" 
+                + "class=\"submitButton\" style=\"color:black\">" 
+                + i + "</a>";
     }
     document.getElementById("commentLister").innerHTML = txt;
+}
+
+function blogListBlog(xmlhttp,param) {
 }
 
 loadXMLDoc("module/headnav.html", "headnav");

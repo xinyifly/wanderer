@@ -51,7 +51,7 @@ function adminCommentList(xmlhttp, param) {
 }
 
 function lineDelete(id) {
-    var xmlphp = "http://file.armlfs.org/services/xml.php";
+    var xmlphp = "//file.armlfs.org/services/xml.php";
     var postParam = "url=/upload/xml/comment.xml" + "&op=del" 
         + "&elems=comment_" + id;
     loadXMLDoc(xmlphp, "comment_del" , postParam);

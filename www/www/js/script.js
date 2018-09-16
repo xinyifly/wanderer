@@ -45,7 +45,7 @@ function commentSubmit() {
     var value = document.getElementsByName("value")[0].value;
     if (name != "" && value != "")
     {
-        var xmlphp = "http://file.armlfs.org/services/xml.php";
+        var xmlphp = "//file.armlfs.org/services/xml.php";
         var postParam = "url=/upload/xml/comment.xml" + "&op=add" 
             + "&elems=comment_value_name" + "&value=" + value 
             + "&name=" + name;
